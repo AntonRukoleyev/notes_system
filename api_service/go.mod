@@ -1,4 +1,4 @@
-module github.com/theartofdevel/notes_system/api_service
+module github.com/antonrukoleyev/notes_system/api_service
 
 go 1.15
 
