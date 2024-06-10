@@ -89,17 +89,7 @@ jobs:
         push: true
         tags: antonrukoleyev/notes_system.category_service:latest
 
-    - name: Deploy CategoryService
-      uses: dawidd6/action-ansible-playbook@v2
-      with:
-        playbook: deploy.yml
-        directory: category_service/
-        key: ${{secrets.KART_SSH_PRIV_KEY}}
-        inventory: |
-          [all]
-          kartservices.com ansible_ssh_port=${{secrets.KART_SSH_PORT}} ansible_ssh_user=${{secrets.KART_SSH_USER}} ansible_become_user=${{secrets.KART_ANSIBLE_BECOME_USER}} ansible_become_password=${{secrets.KART_ANSIBLE_BECOME_PASSWORD}}
-        options: |
-          --verbose
+
   file_service:
     needs: check
     if: needs.check.outputs.file_service == 'true'
@@ -120,17 +110,7 @@ jobs:
         push: true
         tags: antonrukoleyev/notes_system.file_service:latest
 
-    - name: Deploy FileService
-      uses: dawidd6/action-ansible-playbook@v2
-      with:
-        playbook: deploy.yml
-        directory: file_service/
-        key: ${{secrets.KART_SSH_PRIV_KEY}}
-        inventory: |
-          [all]
-          kartservices.com ansible_ssh_port=${{secrets.KART_SSH_PORT}} ansible_ssh_user=${{secrets.KART_SSH_USER}} ansible_become_user=${{secrets.KART_ANSIBLE_BECOME_USER}} ansible_become_password=${{secrets.KART_ANSIBLE_BECOME_PASSWORD}}
-        options: |
-          --verbose
+
   note_service:
     needs: check
     if: needs.check.outputs.note_service == 'true'
@@ -151,17 +131,7 @@ jobs:
         push: true
         tags: antonrukoleyev/notes_system.note_service:latest
 
-    - name: Deploy NoteService
-      uses: dawidd6/action-ansible-playbook@v2
-      with:
-        playbook: deploy.yml
-        directory: note_service/
-        key: ${{secrets.KART_SSH_PRIV_KEY}}
-        inventory: |
-          [all]
-          kartservices.com ansible_ssh_port=${{secrets.KART_SSH_PORT}} ansible_ssh_user=${{secrets.KART_SSH_USER}} ansible_become_user=${{secrets.KART_ANSIBLE_BECOME_USER}} ansible_become_password=${{secrets.KART_ANSIBLE_BECOME_PASSWORD}}
-        options: |
-          --verbose
+
   tag_service:
     needs: check
     if: needs.check.outputs.tag_service == 'true'
@@ -182,17 +152,7 @@ jobs:
         push: true
         tags: antonrukoleyev/notes_system.tag_service:latest
 
-    - name: Deploy TagService
-      uses: dawidd6/action-ansible-playbook@v2
-      with:
-        playbook: deploy.yml
-        directory: tag_service/
-        key: ${{secrets.KART_SSH_PRIV_KEY}}
-        inventory: |
-          [all]
-          kartservices.com ansible_ssh_port=${{secrets.KART_SSH_PORT}} ansible_ssh_user=${{secrets.KART_SSH_USER}} ansible_become_user=${{secrets.KART_ANSIBLE_BECOME_USER}} ansible_become_password=${{secrets.KART_ANSIBLE_BECOME_PASSWORD}}
-        options: |
-          --verbose
+
   user_service:
     needs: check
     if: needs.check.outputs.user_service == 'true'
@@ -213,14 +173,3 @@ jobs:
         push: true
         tags: antonrukoleyev/notes_system.user_service:latest
 
-    - name: Deploy UserService
-      uses: dawidd6/action-ansible-playbook@v2
-      with:
-        playbook: deploy.yml
-        directory: user_service/
-        key: ${{secrets.KART_SSH_PRIV_KEY}}
-        inventory: |
-          [all]
-          kartservices.com ansible_ssh_port=${{secrets.KART_SSH_PORT}} ansible_ssh_user=${{secrets.KART_SSH_USER}} ansible_become_user=${{secrets.KART_ANSIBLE_BECOME_USER}} ansible_become_password=${{secrets.KART_ANSIBLE_BECOME_PASSWORD}}
-        options: |
-          --verbose
