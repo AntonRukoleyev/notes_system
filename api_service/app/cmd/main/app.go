@@ -27,7 +27,7 @@ import (
 	"time"
 )
 
-func main() {
+func main() anton{
 	logging.Init()
 	logger := logging.GetLogger()
 	logger.Println("logger initialized")
