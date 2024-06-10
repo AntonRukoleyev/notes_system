@@ -66,7 +66,7 @@ jobs:
       with:
         context: api_service/
         push: true
-        tags: theartofdevel/notes_system.api_service:latest
+        tags: AntonRukoleyev/notes_system.api_service:latest
 
 
   category_service:
@@ -87,7 +87,7 @@ jobs:
       with:
         context: category_service/
         push: true
-        tags: theartofdevel/notes_system.category_service:latest
+        tags: AntonRukoleyev/notes_system.category_service:latest
 
     - name: Deploy CategoryService
       uses: dawidd6/action-ansible-playbook@v2
@@ -118,7 +118,7 @@ jobs:
       with:
         context: file_service/
         push: true
-        tags: theartofdevel/notes_system.file_service:latest
+        tags: AntonRukoleyev/notes_system.file_service:latest
 
     - name: Deploy FileService
       uses: dawidd6/action-ansible-playbook@v2
@@ -149,7 +149,7 @@ jobs:
       with:
         context: note_service/
         push: true
-        tags: theartofdevel/notes_system.note_service:latest
+        tags: AntonRukoleyev/notes_system.note_service:latest
 
     - name: Deploy NoteService
       uses: dawidd6/action-ansible-playbook@v2
@@ -180,7 +180,7 @@ jobs:
       with:
         context: tag_service/
         push: true
-        tags: theartofdevel/notes_system.tag_service:latest
+        tags: AntonRukoleyev/notes_system.tag_service:latest
 
     - name: Deploy TagService
       uses: dawidd6/action-ansible-playbook@v2
@@ -211,7 +211,7 @@ jobs:
       with:
         context: user_service/
         push: true
-        tags: theartofdevel/notes_system.user_service:latest
+        tags: AntonRukoleyev/notes_system.user_service:latest
 
     - name: Deploy UserService
       uses: dawidd6/action-ansible-playbook@v2
